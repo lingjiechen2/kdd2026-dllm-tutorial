@@ -22,6 +22,9 @@
       </a>
       <nav aria-label="Page navigation">
         <a href="#title">Title</a>
+        <a href="#content">Content</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#resources">Resources</a>
         <a href="#tutors">Tutors</a>
       </nav>
     </header>
@@ -34,27 +37,176 @@
         </div>
 
         <div class="visual-panel" aria-hidden="true">
-          <div class="token-row row-one">
+          <div class="logo-lockup">
+            <span class="logo-d">d</span>
+            <span class="logo-letters">LLM</span>
+          </div>
+
+          <div class="logo-orbit orbit-one"></div>
+          <div class="logo-orbit orbit-two"></div>
+
+          <div class="denoise-row row-one">
             <span></span><span></span><span></span><span></span><span></span>
           </div>
-          <div class="flow-line"></div>
-          <div class="node-field">
-            <span></span><span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span><span></span>
-          </div>
-          <div class="token-row row-two">
+          <div class="denoise-row row-two">
             <span></span><span></span><span></span><span></span>
           </div>
+        </div>
+      </section>
+
+      <section id="content" class="content-section" aria-labelledby="content-title">
+        <div class="section-heading">
+          <p class="label">Content</p>
+          <h2 id="content-title">Hands-on diffusion language modeling with dLLM</h2>
+        </div>
+
+        <div class="content-grid">
+          <article class="summary-card">
+            <h3>Focus</h3>
+            <p>
+              This tutorial is centered on the dLLM open-source repository, a unified framework for
+              training, inference, and evaluation of diffusion language models.
+            </p>
+          </article>
+
+          <article class="summary-card">
+            <h3>Hands-on outcomes</h3>
+            <p>
+              Participants will run interactive inference, adapt models with reproducible recipes,
+              reproduce benchmark results, and extend dLLM with custom samplers or objectives.
+            </p>
+          </article>
+
+          <article class="summary-card">
+            <h3>Audience</h3>
+            <p>
+              The tutorial is designed for researchers and practitioners who want practical,
+              reproducible access to diffusion language model experiments and tooling.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="schedule" class="schedule-section" aria-labelledby="schedule-title">
+        <div class="section-heading">
+          <p class="label">Schedule</p>
+          <h2 id="schedule-title">Tutorial Agenda</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <time>Module 1<br />50 min</time>
+            <div>
+              <h3>Foundations and quick demo</h3>
+              <p>
+                Introduce reproducibility challenges, walk through the dLLM repository structure,
+                and run a quick inference demo with an open diffusion language model.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <time>Module 2<br />25 min</time>
+            <div>
+              <h3>Inference experiments</h3>
+              <p>
+                Vary decoding settings, visualize token generation order, and use dLLM sampler
+                abstractions to compare inference behavior.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <time>Module 3<br />40 min</time>
+            <div>
+              <h3>Training and open recipes</h3>
+              <p>
+                Cover the unified trainer interface and open recipes such as BERT-Chat, Tiny-A2D,
+                and small-scale adaptation workflows.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <time>Module 4<br />20 min</time>
+            <div>
+              <h3>Unified evaluation</h3>
+              <p>
+                Run dLLM's unified evaluation pipeline and compare how configuration choices affect
+                reported benchmark numbers.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <time>Module 5<br />20 min</time>
+            <div>
+              <h3>Framework extension</h3>
+              <p>
+                Implement a minimal scheduler or sampler change and verify it executes inside the
+                existing modular pipeline.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <time>Module 6<br />25 min</time>
+            <div>
+              <h3>Discussion and troubleshooting</h3>
+              <p>
+                Discuss when diffusion language models are preferable to autoregressive baselines,
+                evaluation sensitivity, tooling gaps, and attendee questions.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="resources" class="resources-section" aria-labelledby="resources-title">
+        <div class="section-heading">
+          <p class="label">Resources</p>
+          <h2 id="resources-title">Related Resources</h2>
+        </div>
+
+        <div class="resource-grid">
+          <a class="resource-card" href="https://github.com/ZHZisZZ/dllm">
+            <span>Code</span>
+            <strong>dLLM GitHub Repository</strong>
+            <p>Unified training, inference, and evaluation framework for diffusion language models.</p>
+          </a>
+
+          <a class="resource-card" href="https://arxiv.org/abs/2602.22661">
+            <span>Report</span>
+            <strong>dLLM: Simple Diffusion Language Modeling</strong>
+            <p>Technical report introducing the dLLM framework and reproducible recipes.</p>
+          </a>
+
+          <a class="resource-card" href="https://huggingface.co/dllm-hub">
+            <span>Models</span>
+            <strong>dLLM Hub on Hugging Face</strong>
+            <p>Released checkpoints and collections including Tiny-A2D and BERT-Chat.</p>
+          </a>
         </div>
       </section>
 
       <section id="tutors" class="tutors" aria-labelledby="tutors-title">
         <div class="section-heading">
           <p class="label">People</p>
-          <h2 id="tutors-title">Tutors and Contributors</h2>
+          <h2 id="tutors-title">Presenter and Contributors</h2>
         </div>
 
         <div class="tutor-list">
+          <article>
+            <div class="person-topline">
+              <span class="initials">LC</span>
+              <p class="role">In-person presenter</p>
+            </div>
+            <h3>Lingjie Chen</h3>
+            <p>Ph.D. student, University of Illinois Urbana-Champaign</p>
+            <p>Works on diffusion language models, post-training, open recipes, model adaptation, and unified evaluation workflows.</p>
+            <a href="mailto:lingjie7@illinois.edu">lingjie7@illinois.edu</a>
+          </article>
+
           <article>
             <div class="person-topline">
               <span class="initials">ZZ</span>
@@ -64,17 +216,6 @@
             <p>Ph.D. student, University of California, Berkeley</p>
             <p>Works on diffusion language models, agentic AI, and reproducible open-source tooling.</p>
             <a href="mailto:zhanhui@berkeley.edu">zhanhui@berkeley.edu</a>
-          </article>
-
-          <article>
-            <div class="person-topline">
-              <span class="initials">LC</span>
-              <p class="role">In-person presenter</p>
-            </div>
-            <h3>Lingjie Chen</h3>
-            <p>Ph.D. student, University of Illinois Urbana-Champaign</p>
-            <p>Works on diffusion language models, post-training, open recipes, and evaluation workflows.</p>
-            <a href="mailto:lingjie7@illinois.edu">lingjie7@illinois.edu</a>
           </article>
 
           <article>
