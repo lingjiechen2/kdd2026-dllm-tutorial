@@ -21,7 +21,6 @@
         </span>
       </a>
       <nav aria-label="Page navigation">
-        <a href="#title">Title</a>
         <a href="#content">Content</a>
         <a href="#schedule">Schedule</a>
         <a href="#resources">Resources</a>
@@ -56,8 +55,7 @@
 
       <section id="content" class="content-section" aria-labelledby="content-title">
         <div class="section-heading">
-          <p class="label">Content</p>
-          <h2 id="content-title">Hands-on diffusion language modeling with dLLM</h2>
+          <h2 id="content-title">Content</h2>
         </div>
 
         <div class="content-grid">
@@ -94,71 +92,179 @@
         </div>
 
         <div class="timeline">
-          <article class="timeline-item">
-            <time>Module 1<br />50 min</time>
-            <div>
-              <h3>Foundations and quick demo</h3>
+          <details class="timeline-item" open>
+            <summary>
+              <time>Module 1<br />50 min</time>
+              <span>
+                <strong>Foundations and quick demo</strong>
+                <small>
+                  Reproducibility challenges, dLLM repository structure, and a first open-model
+                  inference run.
+                </small>
+              </span>
+            </summary>
+            <div class="module-details">
               <p>
-                Introduce reproducibility challenges, walk through the dLLM repository structure,
-                and run a quick inference demo with an open diffusion language model.
+                Participants start from the practical motivation for diffusion language models:
+                bidirectional denoising, non-autoregressive sampling, and why reproducible tooling is
+                still hard to compare across papers.
               </p>
+              <div class="demo-box">
+                <strong>Demo</strong>
+                <p>
+                  Repository walkthrough plus a minimal inference command that loads an open dLLM
+                  checkpoint and generates text from a masked prompt.
+                </p>
+                <p class="placeholder">
+                  Placeholder: add the exact command, checkpoint name, and expected sample output.
+                </p>
+              </div>
             </div>
-          </article>
+          </details>
 
-          <article class="timeline-item">
-            <time>Module 2<br />25 min</time>
-            <div>
-              <h3>Inference experiments</h3>
+          <details class="timeline-item">
+            <summary>
+              <time>Module 2<br />25 min</time>
+              <span>
+                <strong>Inference experiments</strong>
+                <small>
+                  Compare decoding settings, generation order, and sampler behavior.
+                </small>
+              </span>
+            </summary>
+            <div class="module-details">
               <p>
-                Vary decoding settings, visualize token generation order, and use dLLM sampler
-                abstractions to compare inference behavior.
+                This module turns inference into a controlled experiment: attendees vary step count,
+                temperature, remasking policy, and scheduler choices, then compare qualitative output
+                and latency.
               </p>
+              <div class="demo-box">
+                <strong>Demo</strong>
+                <p>
+                  Side-by-side sampler comparison using the same prompt and seed, with token order
+                  visualization for the denoising trajectory.
+                </p>
+                <p class="placeholder">
+                  Placeholder: add sampler presets, visualization screenshot, or notebook link.
+                </p>
+              </div>
             </div>
-          </article>
+          </details>
 
-          <article class="timeline-item">
-            <time>Module 3<br />40 min</time>
-            <div>
-              <h3>Training and open recipes</h3>
+          <details class="timeline-item">
+            <summary>
+              <time>Module 3<br />40 min</time>
+              <span>
+                <strong>Training and open recipes</strong>
+                <small>
+                  Unified trainer interface, BERT-Chat, Tiny-A2D, and adaptation workflows.
+                </small>
+              </span>
+            </summary>
+            <div class="module-details">
               <p>
-                Cover the unified trainer interface and open recipes such as BERT-Chat, Tiny-A2D,
-                and small-scale adaptation workflows.
+                Participants inspect the recipe format, connect data configuration to the trainer,
+                and see how small-scale adaptation can be reproduced without rewriting the pipeline.
               </p>
+              <div class="demo-box">
+                <strong>Demo</strong>
+                <p>
+                  Run a small recipe dry run, inspect logged configuration, and identify the files
+                  that control model, data, objective, and optimization settings.
+                </p>
+                <p class="placeholder">
+                  Placeholder: add the training recipe path and the expected hardware/runtime note.
+                </p>
+              </div>
             </div>
-          </article>
+          </details>
 
-          <article class="timeline-item">
-            <time>Module 4<br />20 min</time>
-            <div>
-              <h3>Unified evaluation</h3>
+          <details class="timeline-item">
+            <summary>
+              <time>Module 4<br />20 min</time>
+              <span>
+                <strong>Unified evaluation</strong>
+                <small>
+                  Run evaluation and compare how configuration choices affect benchmark numbers.
+                </small>
+              </span>
+            </summary>
+            <div class="module-details">
               <p>
-                Run dLLM's unified evaluation pipeline and compare how configuration choices affect
-                reported benchmark numbers.
+                This section focuses on making evaluation comparable: dataset selection, decoding
+                configuration, metric reporting, and where small configuration differences can change
+                reported results.
               </p>
+              <div class="demo-box">
+                <strong>Demo</strong>
+                <p>
+                  Launch one evaluation job, read the generated result file, and compare it against a
+                  reference result table.
+                </p>
+                <p class="placeholder">
+                  Placeholder: add benchmark name, result table, and expected output file location.
+                </p>
+              </div>
             </div>
-          </article>
+          </details>
 
-          <article class="timeline-item">
-            <time>Module 5<br />20 min</time>
-            <div>
-              <h3>Framework extension</h3>
+          <details class="timeline-item">
+            <summary>
+              <time>Module 5<br />20 min</time>
+              <span>
+                <strong>Framework extension</strong>
+                <small>
+                  Implement and verify a minimal scheduler or sampler change.
+                </small>
+              </span>
+            </summary>
+            <div class="module-details">
               <p>
-                Implement a minimal scheduler or sampler change and verify it executes inside the
-                existing modular pipeline.
+                Attendees see the extension points that make dLLM useful as research infrastructure:
+                adding a sampler, swapping an objective, or modifying scheduling behavior while
+                keeping the rest of the pipeline unchanged.
               </p>
+              <div class="demo-box">
+                <strong>Demo</strong>
+                <p>
+                  Modify a minimal sampler hook, run a smoke test, and compare the changed token
+                  trajectory with the baseline sampler.
+                </p>
+                <p class="placeholder">
+                  Placeholder: add target source file, patch snippet, and smoke-test command.
+                </p>
+              </div>
             </div>
-          </article>
+          </details>
 
-          <article class="timeline-item">
-            <time>Module 6<br />25 min</time>
-            <div>
-              <h3>Discussion and troubleshooting</h3>
+          <details class="timeline-item">
+            <summary>
+              <time>Module 6<br />25 min</time>
+              <span>
+                <strong>Discussion and troubleshooting</strong>
+                <small>
+                  Tradeoffs, evaluation sensitivity, tooling gaps, and attendee questions.
+                </small>
+              </span>
+            </summary>
+            <div class="module-details">
               <p>
-                Discuss when diffusion language models are preferable to autoregressive baselines,
-                evaluation sensitivity, tooling gaps, and attendee questions.
+                The closing section ties the hands-on modules back to research judgment: when dLLMs
+                are preferable to autoregressive baselines, where the tooling is mature, and where
+                new contributions are still needed.
               </p>
+              <div class="demo-box">
+                <strong>Discussion prompts</strong>
+                <p>
+                  Collect attendee blockers from the exercises and map each one to debugging steps,
+                  configuration checks, or open-source contribution opportunities.
+                </p>
+                <p class="placeholder">
+                  Placeholder: add FAQ entries from previous dry runs or audience questions.
+                </p>
+              </div>
             </div>
-          </article>
+          </details>
         </div>
       </section>
 

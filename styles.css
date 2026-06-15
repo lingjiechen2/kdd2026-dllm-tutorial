@@ -126,7 +126,7 @@ main {
 .hero {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 34px;
+  gap: 18px;
   min-height: calc(88vh - 72px);
   padding: 86px 0 64px;
 }
@@ -355,10 +355,48 @@ article {
 }
 
 .timeline-item {
+  border: 1px solid rgba(216, 210, 196, 0.92);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 34px rgba(25, 34, 51, 0.08);
+  overflow: hidden;
+}
+
+.timeline-item summary {
   display: grid;
-  grid-template-columns: 112px 1fr;
-  min-height: 0;
+  grid-template-columns: 112px 1fr 28px;
   gap: 18px;
+  align-items: start;
+  cursor: pointer;
+  list-style: none;
+  padding: 22px;
+}
+
+.timeline-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.timeline-item summary::after {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  align-self: center;
+  border: 1px solid rgba(15, 118, 110, 0.32);
+  border-radius: 50%;
+  color: var(--teal);
+  content: "+";
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  place-items: center;
+}
+
+.timeline-item[open] summary {
+  border-bottom: 1px solid rgba(216, 210, 196, 0.72);
+}
+
+.timeline-item[open] summary::after {
+  content: "-";
 }
 
 .timeline-item time {
@@ -368,9 +406,53 @@ article {
   line-height: 1.25;
 }
 
-.timeline-item h3,
-.timeline-item p {
-  margin-top: 0;
+.timeline-item strong {
+  display: block;
+  color: var(--ink);
+  font-size: 1.16rem;
+  line-height: 1.15;
+}
+
+.timeline-item small {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.module-details {
+  display: grid;
+  gap: 16px;
+  padding: 20px 22px 22px 152px;
+}
+
+.module-details p {
+  max-width: 860px;
+  margin: 0;
+}
+
+.demo-box {
+  max-width: 900px;
+  border-left: 3px solid var(--amber);
+  background: rgba(236, 231, 220, 0.45);
+  padding: 16px 18px;
+}
+
+.demo-box strong {
+  color: var(--ink);
+  font-size: 0.84rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.demo-box p {
+  margin-top: 8px;
+}
+
+.placeholder {
+  color: #8a5a12;
+  font-weight: 650;
 }
 
 .resource-card {
@@ -506,6 +588,7 @@ article a {
   }
 
   .hero {
+    gap: 14px;
     padding-top: 46px;
   }
 
@@ -543,7 +626,19 @@ article a {
   }
 
   .timeline-item {
-    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .timeline-item summary {
+    grid-template-columns: 1fr 28px;
+  }
+
+  .timeline-item time {
+    grid-column: 1 / -1;
+  }
+
+  .module-details {
+    padding-left: 22px;
   }
 
   article {
