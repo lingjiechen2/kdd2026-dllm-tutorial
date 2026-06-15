@@ -494,23 +494,6 @@ article {
   transform: translateY(-2px);
 }
 
-.resource-stack {
-  display: grid;
-  gap: 28px;
-}
-
-.resource-group {
-  display: grid;
-  gap: 14px;
-}
-
-.resource-group h3 {
-  margin: 0;
-  color: var(--ink);
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
 .person-topline {
   display: flex;
   align-items: center;
