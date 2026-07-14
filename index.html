@@ -1,4 +1,3 @@
-<!-- trigger GitHub Pages rebuild -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,16 +8,19 @@
       content="KDD 2026 tutorial page for A Hands-on Tutorial for Diffusion Language Models with dLLM."
     />
     <title>A Hands-on Tutorial for Diffusion Language Models with dLLM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&amp;family=Urbanist:wght@400;500;600;650;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Tutorial homepage">
-        <span class="brand-mark" aria-hidden="true">d</span>
-        <span>
-          <strong>dLLM Tutorial</strong>
-          <small>KDD 2026</small>
-        </span>
+        <img class="brand-logo" src="logo.png" alt="dLLM" />
+        <span class="brand-name">Hands-on Tutorial</span>
       </a>
       <nav aria-label="Page navigation">
         <a href="#content">Content</a>
@@ -26,36 +28,75 @@
         <a href="#resources">Resources</a>
         <a href="#tutors">Tutors</a>
       </nav>
+      <a
+        class="header-pill kdd-brand"
+        href="https://kdd2026.kdd.org/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Visit the official KDD 2026 website"
+      >
+        <img
+          src="https://kdd2026.kdd.org/wp-content/uploads/2025/08/KDD26-Logo4-black.png"
+          alt="KDD 2026"
+        />
+      </a>
     </header>
 
     <main id="top">
       <section id="title" class="hero" aria-labelledby="tutorial-title">
         <div class="hero-copy">
           <p class="label">KDD 2026 Hands-on Tutorial</p>
-          <h1 id="tutorial-title">A Hands-on Tutorial for Diffusion Language Models with dLLM</h1>
+          <h1 id="tutorial-title">Build with diffusion language models, <em>hands on.</em></h1>
+          <p class="hero-deck">
+            A practical tutorial on training, inference, evaluation, and extension with
+            <strong>dLLM</strong>—a unified open-source framework for diffusion language models.
+          </p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#schedule">View the agenda</a>
+            <a class="button-secondary" href="#resources">Explore resources ↓</a>
+          </div>
         </div>
 
         <div class="visual-panel" aria-hidden="true">
-          <div class="logo-lockup">
-            <span class="logo-d">d</span>
-            <span class="logo-letters">LLM</span>
+          <div class="visual-halo"></div>
+          <div class="model-window">
+            <div class="window-bar">
+              <i></i><i></i><i></i><span>guided diffusion pass · tutorial lab</span>
+            </div>
+            <div class="denoise-lab">
+              <p class="lab-label">Prompt denoising trajectory</p>
+              <div class="denoise-stage">
+                <span>t = 32</span>
+                <code><i>[MASK]</i> language <i>[MASK]</i> learn <i>[MASK]</i></code>
+              </div>
+              <div class="stage-connector"></div>
+              <div class="denoise-stage">
+                <span>t = 16</span>
+                <code>diffusion language <i>[MASK]</i> learn in parallel</code>
+              </div>
+              <div class="stage-connector"></div>
+              <div class="denoise-stage is-complete">
+                <span>t = 0</span>
+                <code>diffusion language models learn in parallel</code>
+              </div>
+            </div>
           </div>
-
-          <div class="logo-orbit orbit-one"></div>
-          <div class="logo-orbit orbit-two"></div>
-
-          <div class="denoise-row row-one">
-            <span></span><span></span><span></span><span></span><span></span>
-          </div>
-          <div class="denoise-row row-two">
-            <span></span><span></span><span></span><span></span>
+          <div class="visual-card">
+            <p>Workshop format</p>
+            <div><span>Modules</span><strong>06</strong></div>
+            <div><span>Total time</span><strong>180 min</strong></div>
+            <div><span>Mode</span><strong>In person</strong></div>
           </div>
         </div>
       </section>
 
       <section id="content" class="content-section" aria-labelledby="content-title">
         <div class="section-heading">
-          <h2 id="content-title">Content</h2>
+          <div>
+            <p class="label">What you will learn</p>
+            <h2 id="content-title">From first sample to <em>your own extension.</em></h2>
+          </div>
+          <p class="section-note">Follow the complete dLLM workflow, then leave with reusable recipes for your own experiments.</p>
         </div>
 
         <div class="content-grid">
@@ -87,12 +128,15 @@
 
       <section id="schedule" class="schedule-section" aria-labelledby="schedule-title">
         <div class="section-heading">
-          <p class="label">Schedule</p>
-          <h2 id="schedule-title">Tutorial Agenda</h2>
+          <div>
+            <p class="label">Schedule</p>
+            <h2 id="schedule-title">Three hours, <em>six practical modules.</em></h2>
+          </div>
+          <p class="section-note">Expand each module for its outcome, hands-on activity, and practical takeaway.</p>
         </div>
 
         <div class="timeline">
-          <details class="timeline-item" open>
+          <details class="timeline-item">
             <summary>
               <time>Module 1<br />50 min</time>
               <span>
@@ -104,20 +148,22 @@
               </span>
             </summary>
             <div class="module-details">
-              <p>
-                Participants start from the practical motivation for diffusion language models:
-                bidirectional denoising, non-autoregressive sampling, and why reproducible tooling is
-                still hard to compare across papers.
+              <p class="module-outcome">
+                <span>Session outcome</span>
+                Run a first open-model dLLM inference and understand how the repository fits together.
               </p>
-              <div class="demo-box">
-                <strong>Demo</strong>
-                <p>
-                  Repository walkthrough plus a minimal inference command that loads an open dLLM
-                  checkpoint and generates text from a masked prompt.
-                </p>
-                <p class="placeholder">
-                  Placeholder: add the exact command, checkpoint name, and expected sample output.
-                </p>
+              <div class="module-quick-grid">
+                <div>
+                  <span>Hands-on</span>
+                  <strong>Repository tour → masked prompt → generated output</strong>
+                </div>
+                <div>
+                  <span>Take away</span>
+                  <strong>A runnable starter notebook and setup checklist</strong>
+                </div>
+              </div>
+              <div class="module-tags" aria-label="Module topics">
+                <span>Foundations</span><span>Setup</span><span>First generation</span>
               </div>
             </div>
           </details>
@@ -133,20 +179,22 @@
               </span>
             </summary>
             <div class="module-details">
-              <p>
-                This module turns inference into a controlled experiment: attendees vary step count,
-                temperature, remasking policy, and scheduler choices, then compare qualitative output
-                and latency.
+              <p class="module-outcome">
+                <span>Session outcome</span>
+                Compare sampler behavior, output quality, and latency under a controlled prompt.
               </p>
-              <div class="demo-box">
-                <strong>Demo</strong>
-                <p>
-                  Side-by-side sampler comparison using the same prompt and seed, with token order
-                  visualization for the denoising trajectory.
-                </p>
-                <p class="placeholder">
-                  Placeholder: add sampler presets, visualization screenshot, or notebook link.
-                </p>
+              <div class="module-quick-grid">
+                <div>
+                  <span>Hands-on</span>
+                  <strong>One prompt + one seed → side-by-side sampler runs</strong>
+                </div>
+                <div>
+                  <span>Take away</span>
+                  <strong>Recommended presets and a denoising-order visualization</strong>
+                </div>
+              </div>
+              <div class="module-tags" aria-label="Module topics">
+                <span>Samplers</span><span>Decoding</span><span>Latency</span>
               </div>
             </div>
           </details>
@@ -162,19 +210,22 @@
               </span>
             </summary>
             <div class="module-details">
-              <p>
-                Participants inspect the recipe format, connect data configuration to the trainer,
-                and see how small-scale adaptation can be reproduced without rewriting the pipeline.
+              <p class="module-outcome">
+                <span>Session outcome</span>
+                Launch a reusable training recipe and trace each setting to the unified trainer.
               </p>
-              <div class="demo-box">
-                <strong>Demo</strong>
-                <p>
-                  Run a small recipe dry run, inspect logged configuration, and identify the files
-                  that control model, data, objective, and optimization settings.
-                </p>
-                <p class="placeholder">
-                  Placeholder: add the training recipe path and the expected hardware/runtime note.
-                </p>
+              <div class="module-quick-grid">
+                <div>
+                  <span>Hands-on</span>
+                  <strong>Open a recipe → run a dry run → inspect the logs</strong>
+                </div>
+                <div>
+                  <span>Take away</span>
+                  <strong>A reusable config with hardware and runtime guidance</strong>
+                </div>
+              </div>
+              <div class="module-tags" aria-label="Module topics">
+                <span>Training</span><span>Configuration</span><span>Adaptation</span>
               </div>
             </div>
           </details>
@@ -190,20 +241,22 @@
               </span>
             </summary>
             <div class="module-details">
-              <p>
-                This section focuses on making evaluation comparable: dataset selection, decoding
-                configuration, metric reporting, and where small configuration differences can change
-                reported results.
+              <p class="module-outcome">
+                <span>Session outcome</span>
+                Reproduce one benchmark result with a clear, comparable evaluation setup.
               </p>
-              <div class="demo-box">
-                <strong>Demo</strong>
-                <p>
-                  Launch one evaluation job, read the generated result file, and compare it against a
-                  reference result table.
-                </p>
-                <p class="placeholder">
-                  Placeholder: add benchmark name, result table, and expected output file location.
-                </p>
+              <div class="module-quick-grid">
+                <div>
+                  <span>Hands-on</span>
+                  <strong>Launch an evaluation → inspect results → compare a reference</strong>
+                </div>
+                <div>
+                  <span>Take away</span>
+                  <strong>An evaluation checklist and example result table</strong>
+                </div>
+              </div>
+              <div class="module-tags" aria-label="Module topics">
+                <span>Benchmarks</span><span>Metrics</span><span>Reproducibility</span>
               </div>
             </div>
           </details>
@@ -219,20 +272,22 @@
               </span>
             </summary>
             <div class="module-details">
-              <p>
-                Attendees see the extension points that make dLLM useful as research infrastructure:
-                adding a sampler, swapping an objective, or modifying scheduling behavior while
-                keeping the rest of the pipeline unchanged.
+              <p class="module-outcome">
+                <span>Session outcome</span>
+                Implement and verify a small sampler or scheduler extension without changing the pipeline.
               </p>
-              <div class="demo-box">
-                <strong>Demo</strong>
-                <p>
-                  Modify a minimal sampler hook, run a smoke test, and compare the changed token
-                  trajectory with the baseline sampler.
-                </p>
-                <p class="placeholder">
-                  Placeholder: add target source file, patch snippet, and smoke-test command.
-                </p>
+              <div class="module-quick-grid">
+                <div>
+                  <span>Hands-on</span>
+                  <strong>Edit one hook → run a smoke test → compare trajectories</strong>
+                </div>
+                <div>
+                  <span>Take away</span>
+                  <strong>A minimal extension template and verification command</strong>
+                </div>
+              </div>
+              <div class="module-tags" aria-label="Module topics">
+                <span>Sampler API</span><span>Extension</span><span>Smoke test</span>
               </div>
             </div>
           </details>
@@ -248,20 +303,22 @@
               </span>
             </summary>
             <div class="module-details">
-              <p>
-                The closing section ties the hands-on modules back to research judgment: when dLLMs
-                are preferable to autoregressive baselines, where the tooling is mature, and where
-                new contributions are still needed.
+              <p class="module-outcome">
+                <span>Session outcome</span>
+                Diagnose common blockers and connect open questions to practical research directions.
               </p>
-              <div class="demo-box">
-                <strong>Discussion prompts</strong>
-                <p>
-                  Collect attendee blockers from the exercises and map each one to debugging steps,
-                  configuration checks, or open-source contribution opportunities.
-                </p>
-                <p class="placeholder">
-                  Placeholder: add FAQ entries from previous dry runs or audience questions.
-                </p>
+              <div class="module-quick-grid">
+                <div>
+                  <span>In the room</span>
+                  <strong>Attendee questions → configuration checks → debugging paths</strong>
+                </div>
+                <div>
+                  <span>Take away</span>
+                  <strong>A troubleshooting guide and open contribution map</strong>
+                </div>
+              </div>
+              <div class="module-tags" aria-label="Module topics">
+                <span>Debugging</span><span>Tradeoffs</span><span>Open problems</span>
               </div>
             </div>
           </details>
@@ -270,8 +327,11 @@
 
       <section id="resources" class="resources-section" aria-labelledby="resources-title">
         <div class="section-heading">
-          <p class="label">Resources</p>
-          <h2 id="resources-title">Related Resources</h2>
+          <div>
+            <p class="label">Resources</p>
+            <h2 id="resources-title">Everything you need to <em>keep building.</em></h2>
+          </div>
+          <p class="section-note">Open code, technical documentation, and model checkpoints used throughout the tutorial.</p>
         </div>
 
         <div class="resource-grid">
@@ -297,8 +357,11 @@
 
       <section id="tutors" class="tutors" aria-labelledby="tutors-title">
         <div class="section-heading">
-          <p class="label">People</p>
-          <h2 id="tutors-title">Presenter and Contributors</h2>
+          <div>
+            <p class="label">People</p>
+            <h2 id="tutors-title">Meet the <em>tutorial team.</em></h2>
+          </div>
+          <p class="section-note">Researchers advancing practical, reproducible diffusion language modeling.</p>
         </div>
 
         <div class="tutor-list">
@@ -310,7 +373,10 @@
             <h3>Lingjie Chen</h3>
             <p>Ph.D. student, University of Illinois Urbana-Champaign</p>
             <p>Works on diffusion language models, post-training, open recipes, model adaptation, and unified evaluation workflows.</p>
-            <a href="mailto:lingjie7@illinois.edu">lingjie7@illinois.edu</a>
+            <div class="person-links">
+              <a href="https://lingjiechen2.github.io/" target="_blank" rel="noreferrer">Website ↗</a>
+              <a href="mailto:lingjie7@illinois.edu">Email</a>
+            </div>
           </article>
 
           <article>
@@ -321,7 +387,10 @@
             <h3>Zhanhui Zhou</h3>
             <p>Ph.D. student, University of California, Berkeley</p>
             <p>Works on diffusion language models, agentic AI, and reproducible open-source tooling.</p>
-            <a href="mailto:zhanhui@berkeley.edu">zhanhui@berkeley.edu</a>
+            <div class="person-links">
+              <a href="https://zhziszz.github.io/" target="_blank" rel="noreferrer">Website ↗</a>
+              <a href="mailto:zhanhui@berkeley.edu">Email</a>
+            </div>
           </article>
 
           <article>
@@ -332,7 +401,10 @@
             <h3>Hanghang Tong</h3>
             <p>Professor, University of Illinois Urbana-Champaign</p>
             <p>Works on large-scale data mining and machine learning for graph and multimedia data.</p>
-            <a href="mailto:htong@illinois.edu">htong@illinois.edu</a>
+            <div class="person-links">
+              <a href="https://tonghanghang.org/" target="_blank" rel="noreferrer">Website ↗</a>
+              <a href="mailto:htong@illinois.edu">Email</a>
+            </div>
           </article>
 
           <article>
@@ -343,10 +415,18 @@
             <h3>Dawn Song</h3>
             <p>Professor, University of California, Berkeley</p>
             <p>Works on AI safety and security, agentic AI, privacy, and trustworthy AI systems.</p>
-            <a href="mailto:dawnsong@cs.berkeley.edu">dawnsong@cs.berkeley.edu</a>
+            <div class="person-links">
+              <a href="https://dawnsong.io/" target="_blank" rel="noreferrer">Website ↗</a>
+              <a href="mailto:dawnsong@cs.berkeley.edu">Email</a>
+            </div>
           </article>
         </div>
       </section>
+
+      <footer class="site-footer">
+        <p>A Hands-on Tutorial for Diffusion Language Models with dLLM · KDD 2026</p>
+        <a href="#top">Back to top ↑</a>
+      </footer>
     </main>
   </body>
 </html>
