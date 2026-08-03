@@ -8,10 +8,24 @@
       content="KDD 2026 tutorial page for A Hands-on Tutorial for Diffusion Language Models with dLLM."
     />
     <title>A Hands-on Tutorial for Diffusion Language Models with dLLM</title>
+    <script>
+      (() => {
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        let savedTheme = null;
+        try {
+          savedTheme = localStorage.getItem("dllm-theme");
+        } catch (_error) {
+          // System preference still works when browser storage is unavailable.
+        }
+        const theme = savedTheme || systemTheme;
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&amp;family=Urbanist:wght@400;500;600;650;700;800&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -28,32 +42,56 @@
         <a href="#resources">Resources</a>
         <a href="#tutors">Tutors</a>
       </nav>
-      <a
-        class="header-pill kdd-brand"
-        href="https://kdd2026.kdd.org/"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Visit the official KDD 2026 website"
-      >
-        <img
-          src="https://kdd2026.kdd.org/wp-content/uploads/2025/08/KDD26-Logo4-black.png"
-          alt="KDD 2026"
-        />
-      </a>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <span aria-hidden="true">☾</span>
+        </button>
+        <a
+          class="header-pill kdd-brand"
+          href="https://kdd2026.kdd.org/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Visit the official KDD 2026 website"
+        >
+          <img
+            src="https://kdd2026.kdd.org/wp-content/uploads/2025/08/KDD26-Logo4-black.png"
+            alt="KDD 2026"
+          />
+        </a>
+      </div>
     </header>
 
     <main id="top">
       <section id="title" class="hero" aria-labelledby="tutorial-title">
         <div class="hero-copy">
           <p class="label">KDD 2026 Hands-on Tutorial</p>
-          <h1 id="tutorial-title">Build with diffusion language models, <em>hands on.</em></h1>
+          <h1 id="tutorial-title">Diffusion LLMs, <em>hands on.</em></h1>
           <p class="hero-deck">
             A practical tutorial on training, inference, evaluation, and extension with
             <strong>dLLM</strong>—a unified open-source framework for diffusion language models.
           </p>
-          <div class="hero-actions">
-            <a class="button-primary" href="#schedule">View the agenda</a>
-            <a class="button-secondary" href="#resources">Explore resources ↓</a>
+          <div class="hero-resources" aria-label="Key tutorial resources">
+            <a href="https://github.com/ZHZisZZ/dllm" target="_blank" rel="noreferrer">
+              <span class="hero-resource-icon" data-icon="github" aria-hidden="true">
+                <img src="https://cdn.simpleicons.org/github/181717" alt="" />
+              </span>
+              <span><small>Code</small><strong>GitHub</strong></span>
+              <i aria-hidden="true">↗</i>
+            </a>
+            <a href="https://arxiv.org/abs/2602.22661" target="_blank" rel="noreferrer">
+              <span class="hero-resource-icon" data-icon="arxiv" aria-hidden="true">
+                <img src="https://cdn.simpleicons.org/arxiv/B31B1B" alt="" />
+              </span>
+              <span><small>Paper</small><strong>arXiv</strong></span>
+              <i aria-hidden="true">↗</i>
+            </a>
+            <a href="https://huggingface.co/dllm-hub" target="_blank" rel="noreferrer">
+              <span class="hero-resource-icon" data-icon="huggingface" aria-hidden="true">
+                <img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="" />
+              </span>
+              <span><small>Models</small><strong>Hugging Face</strong></span>
+              <i aria-hidden="true">↗</i>
+            </a>
           </div>
         </div>
 
@@ -93,35 +131,25 @@
       <section id="content" class="content-section" aria-labelledby="content-title">
         <div class="section-heading">
           <div>
-            <p class="label">What you will learn</p>
+            <p class="label">Overview</p>
             <h2 id="content-title">From first sample to <em>your own extension.</em></h2>
           </div>
-          <p class="section-note">Follow the complete dLLM workflow, then leave with reusable recipes for your own experiments.</p>
         </div>
 
         <div class="content-grid">
           <article class="summary-card">
             <h3>Focus</h3>
-            <p>
-              This tutorial is centered on the dLLM open-source repository, a unified framework for
-              training, inference, and evaluation of diffusion language models.
-            </p>
+            <p>A unified framework for dLLM training, inference, and evaluation.</p>
           </article>
 
           <article class="summary-card">
             <h3>Hands-on outcomes</h3>
-            <p>
-              Participants will run interactive inference, adapt models with reproducible recipes,
-              reproduce benchmark results, and extend dLLM with custom samplers or objectives.
-            </p>
+            <p>Run inference, adapt a model, reproduce results, and add a custom sampler.</p>
           </article>
 
           <article class="summary-card">
             <h3>Audience</h3>
-            <p>
-              The tutorial is designed for researchers and practitioners who want practical,
-              reproducible access to diffusion language model experiments and tooling.
-            </p>
+            <p>Researchers and practitioners building with diffusion language models.</p>
           </article>
         </div>
       </section>
@@ -132,7 +160,15 @@
             <p class="label">Schedule</p>
             <h2 id="schedule-title">Three hours, <em>six practical modules.</em></h2>
           </div>
-          <p class="section-note">Expand each module for its outcome, hands-on activity, and practical takeaway.</p>
+        </div>
+
+        <div class="schedule-resource">
+          <span class="notebook-mark" aria-hidden="true">NB</span>
+          <div>
+            <span>Workshop notebook</span>
+            <strong>One notebook for all six modules</strong>
+          </div>
+          <a href="notebooks/kdd2026-dllm-hands-on.ipynb" download>Download .ipynb ↓</a>
         </div>
 
         <div class="timeline">
@@ -331,24 +367,32 @@
             <p class="label">Resources</p>
             <h2 id="resources-title">Everything you need to <em>keep building.</em></h2>
           </div>
-          <p class="section-note">Open code, technical documentation, and model checkpoints used throughout the tutorial.</p>
         </div>
 
         <div class="resource-grid">
           <a class="resource-card" href="https://github.com/ZHZisZZ/dllm">
             <span>Code</span>
+            <span class="resource-icon" data-icon="github" aria-hidden="true">
+              <img src="https://cdn.simpleicons.org/github/181717" alt="" />
+            </span>
             <strong>dLLM GitHub Repository</strong>
             <p>Unified training, inference, and evaluation framework for diffusion language models.</p>
           </a>
 
           <a class="resource-card" href="https://arxiv.org/abs/2602.22661">
             <span>Report</span>
+            <span class="resource-icon" data-icon="arxiv" aria-hidden="true">
+              <img src="https://cdn.simpleicons.org/arxiv/B31B1B" alt="" />
+            </span>
             <strong>dLLM: Simple Diffusion Language Modeling</strong>
             <p>Technical report introducing the dLLM framework and reproducible recipes.</p>
           </a>
 
           <a class="resource-card" href="https://huggingface.co/dllm-hub">
             <span>Models</span>
+            <span class="resource-icon" data-icon="huggingface" aria-hidden="true">
+              <img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="" />
+            </span>
             <strong>dLLM Hub on Hugging Face</strong>
             <p>Released checkpoints and collections including Tiny-A2D and BERT-Chat.</p>
           </a>
@@ -361,7 +405,6 @@
             <p class="label">People</p>
             <h2 id="tutors-title">Meet the <em>tutorial team.</em></h2>
           </div>
-          <p class="section-note">Researchers advancing practical, reproducible diffusion language modeling.</p>
         </div>
 
         <div class="tutor-list">
@@ -423,10 +466,52 @@
         </div>
       </section>
 
-      <footer class="site-footer">
-        <p>A Hands-on Tutorial for Diffusion Language Models with dLLM · KDD 2026</p>
-        <a href="#top">Back to top ↑</a>
-      </footer>
     </main>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const toggle = document.querySelector(".theme-toggle");
+        const icon = toggle.querySelector("span");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const updateToggle = () => {
+          const isDark = root.dataset.theme === "dark";
+          const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+          icon.textContent = isDark ? "☀" : "☾";
+          toggle.setAttribute("aria-label", label);
+          toggle.setAttribute("title", label);
+          toggle.setAttribute("aria-pressed", String(isDark));
+        };
+
+        const applyTheme = (theme, save = false) => {
+          root.dataset.theme = theme;
+          root.style.colorScheme = theme;
+          if (save) {
+            try {
+              localStorage.setItem("dllm-theme", theme);
+            } catch (_error) {
+              // The theme still applies when browser storage is unavailable.
+            }
+          }
+          updateToggle();
+        };
+
+        toggle.addEventListener("click", () => {
+          applyTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
+        });
+
+        systemTheme.addEventListener?.("change", (event) => {
+          try {
+            if (!localStorage.getItem("dllm-theme")) {
+              applyTheme(event.matches ? "dark" : "light");
+            }
+          } catch (_error) {
+            applyTheme(event.matches ? "dark" : "light");
+          }
+        });
+
+        updateToggle();
+      })();
+    </script>
   </body>
 </html>
